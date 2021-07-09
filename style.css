@@ -1,0 +1,228 @@
+/* google font */
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap');
+
+/* style */
+
+:root{
+    --primary-color: #fece00;
+    --white-color: #ffffff;
+    --black-color: #000000;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Oswald', sans-serif;
+}
+
+.coming-soon{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background-image: linear-gradient(45deg ,#fece00, #ff4757, #eb2f06);
+}
+
+.coming-soon-inner{
+    position: relative;
+}
+
+.coming-soon-inner::after{
+    content: '';
+    width: 60%;
+    height: 2px;
+    background: var(--white-color);
+    position: absolute;
+    bottom: -80px;
+    right: 0;
+    transform: skewY(-10deg);
+}
+
+.coming-soon-inner::before{
+    content: '';
+    width: 60%;
+    height: 2px;
+    background: var(--black-color);
+    position: absolute;
+    top: -50px;
+    right: 0;
+    transform: skewY(-10deg);
+}
+
+.heading{
+    font-size: 100px;
+    text-transform: uppercase;
+    padding: 20px;
+    background: var(--black-color);
+    color: var(--primary-color);
+    transform: skewY(-10deg);
+    font-weight: 500;
+    line-height: 100px;
+}
+
+.tomato{
+    color: #eb2f06;
+}
+
+.heading::before{
+    content: '';
+    width: 60%;
+    height: 2px;
+    background: var(--black-color);
+    position: absolute;
+    top: -50px;
+    left: 0;
+}
+
+.heading::after{
+    content: '';
+    width: 60%;
+    height: 2px;
+    background: var(--white-color);
+    position: absolute;
+    bottom: -120px;
+    left: 0;
+}
+
+.small-heading{
+    font-size: 30px;
+    text-transform: uppercase;
+    display: inline-block;
+    padding: 20px;
+    background: var(--white-color);
+    color: var(--black-color);
+    font-weight: 400;
+    transform: skewY(-10deg);
+    line-height: 30px;
+    position: absolute;
+    right: 0;
+    bottom: -44px;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.3);
+}
+
+.counter-timer{
+    position: absolute;
+    transform: skewY(-10deg);
+    left: 0;
+    bottom: -75px;
+}
+
+ul.listing{
+    list-style: none;
+    display: flex;
+    column-gap: 10px;
+}
+
+.counter-timer > ul > li > span{
+    padding-right: 5px;
+}
+
+span.bar{
+    display: block;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    z-index: 999;
+}
+
+span.bar i{
+    font-size: 35px;
+    cursor: pointer;
+}
+
+nav.toggle-nav{
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: .3s;
+    height: 100vh;
+    background: var(--white-color);
+    right: -100px;
+    z-index: 333;
+}
+
+nav.toggle-nav.active{
+    right: 0;
+}
+
+
+nav.toggle-nav > ul.listing,
+nav.toggle-nav > ul.listing > li{
+    display: block;
+}
+
+nav.toggle-nav > ul.listing > li > a{
+    font-size: 30px;
+    padding: 10px;
+    display: block;
+    color: var(--black-color);
+    text-align: center;
+    transition: .3s;
+}
+
+nav.toggle-nav > ul.listing > li > a:hover{
+    color: var(--primary-color);
+}
+
+/* media query */
+
+@media only screen and (max-width: 480px) and (min-width: 200px){
+    .heading{
+        font-size: 50px;
+        line-height: 50px;
+        padding: 10px;
+    }
+    .small-heading{
+        font-size: 20px;
+        line-height: 20px;
+        padding: 10px;
+        bottom: -31px;
+    }
+
+    .coming-soon-inner::before, .heading::before{
+        top: -30px;
+    }
+
+    .heading::after{
+        bottom: -100px;
+    }
+}
+
+@media only screen and (max-width: 767px) and (min-width: 481px){
+    .heading{
+        font-size: 60px;
+        line-height: 60px;
+        padding: 10px;
+    }
+    .small-heading{
+        font-size: 25px;
+        line-height: 25px;
+        padding: 10px;
+        bottom: -35px;
+    }
+
+    .coming-soon-inner::before, .heading::before{
+        top: -30px;
+    }
+
+    .heading::after{
+        bottom: -105px;
+    }
+
+    .coming-soon-inner::after{
+        bottom: -80px;
+    }
+
+    .counter-timer{
+        bottom: -90px;
+    }
+}
